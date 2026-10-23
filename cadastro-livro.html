@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Referência Bibliográfica - Desafio</title>
+</head>
+<body>
+
+    <main>
+        <section>
+            <header>
+                <h1>Cadastro de Referência Bibliográfica</h1>
+                <p>Cadastre os livros recomendados para as disciplinas.</p>
+            </header>
+
+            <form action="/salvar-livro" method="post">
+
+                <fieldset>
+                    <legend>Informações da Obra</legend>
+
+                    <p>
+                        <label for="titulo">Título do Livro:</label>
+                        <input type="text" id="titulo" name="titulo" required>
+                    </p>
+
+                    <p>
+                        <label for="autores">Autor(es):</label>
+                        <input type="text" id="autores" name="autores" required>
+                    </p>
+
+                    <p>
+                        <label for="isbn">ISBN (13 dígitos):</label>
+                        <input type="text" id="isbn" name="isbn"
+                               placeholder="Digite os 13 dígitos do ISBN"
+                               inputmode="numeric"
+                               pattern="[0-9]{13}"
+                               minlength="13" maxlength="13"
+                               required>
+                    </p>
+
+                    <p>
+                        <label for="ano">Ano de Publicação:</label>
+                        <input type="number" id="ano" name="ano"
+                               placeholder="Ex: 2023" required>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Detalhes Acadêmicos</legend>
+
+                    <p>
+                        <label for="curso">Curso Alvo:</label>
+                        <select id="curso" name="curso" required>
+                            <option value="" selected disabled>
+                                Selecione o curso...
+                            </option>
+                            <option value="engenharia-software">
+                                Engenharia de Software
+                            </option>
+                            <option value="ads">
+                                Análise e Desenv. de Sistemas
+                            </option>
+                            <option value="engenharia-computação">
+                                Engenharia da Computação
+                            </option>
+                            <option value="medicina">
+                                Medicina
+                            </option>
+                            <option value="direito">
+                                Direito
+                            </option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="disciplina">Disciplina:</label>
+                        <input type="text" id="disciplina"
+                               name="disciplina" required>
+                    </p>
+
+                    <p>Formato do Material:</p>
+
+                    <input type="radio" id="fisico" name="formato"
+                           value="fisico" required>
+                    <label for="fisico">Físico</label>
+
+                    <input type="radio" id="digital" name="formato"
+                           value="digital" required>
+                    <label for="digital">Digital</label>
+
+                    <input type="radio" id="hibrido" name="formato"
+                           value="hibrido" required>
+                    <label for="hibrido">Híbrido</label>
+
+                </fieldset>
+
+                <p>
+                    <button type="submit">Salvar Livro</button>
+                </p>
+
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
